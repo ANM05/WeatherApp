@@ -34,28 +34,20 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:hint="Search Location"
-        android:inputType="text" />
+        android:hint="@string/search_location"
+        android:inputType="text"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/btnfind"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/back"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="595dp"
-        android:layout_marginEnd="-2dp"
-        android:layout_marginRight="-2dp"
-        android:layout_marginBottom="88dp"
-        android:background="#b4ffff"
-        android:text="@string/search" />
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:onClick="onClick"
+        android:text="@string/search"
+        android:textColor="@color/colorPrimaryDark" />
 
 
 </RelativeLayout>
