@@ -4,50 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:background="@color/skyBlue"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/back"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/splashId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="0dp"
-        android:background="@drawable/weather"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/todo" />
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="279dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginRight="143dp"
+        android:layout_marginBottom="330dp"
+        android:src="@drawable/sun" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:hint="@string/search_location"
-        android:inputType="text"
-        android:autofillHints="" />
-
-    <Button
-        android:id="@+id/btnfind"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
-        android:onClick="onClick"
-        android:text="@string/search"
-        android:textColor="@color/colorPrimaryDark" />
 
 
 </RelativeLayout>

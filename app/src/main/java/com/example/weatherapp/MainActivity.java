@@ -1,8 +1,8 @@
 package com.example.weatherapp;
 
-//import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,29 +15,32 @@ import com.squareup.picasso.Picasso;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    @BindView(R.id.back)
-    ImageView back;
-    @BindView(R.id.btnfind)
-    Button mBtnFind;
-    @BindView(R.id.editText)
-    EditText mLocation;
+public class MainActivity extends AppCompatActivity{
+
+    private Handler mHandler;
+    private Runnable mRunnable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
 
+        mRunnable = new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(getApplicationContext(), WeatherActivity.class));
+            }
+        };
 
+        mHandler=new Handler();
+        mHandler.postDelayed(mRunnable, 2000);
     }
 
-    public void onClick(View v){
-        if(v==mBtnFind){
-            String location= mLocation.getText().toString();
-            Intent intent= new Intent(MainActivity.this, WeatherActivity.class);
-            intent.putExtra("location", location);
-            startActivity(intent);
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mHandler !=null && mRunnable!=null) {
+            mHandler.removeCallbacks(mRunnable);
         }
     }
 }
